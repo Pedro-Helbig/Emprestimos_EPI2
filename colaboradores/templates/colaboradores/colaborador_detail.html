@@ -1,0 +1,6 @@
+<h1>{{ colaborador.nome }}</h1>
+<p><b>CPF:</b> {{ colaborador.cpf }}</p>
+<p><b>Cargo:</b> {{ colaborador.cargo }}</p>
+<p><b>Setor:</b> {{ colaborador.setor }}</p>
+<p><b>Admissão:</b> {{ colaborador.data_admissao }}</p>
+<a href="{% url 'colaboradores:listar' %}">Voltar</a>
