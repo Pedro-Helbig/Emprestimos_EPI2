@@ -1,0 +1,5 @@
+/* static/css/main.css */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+.nav-link { padding-left: 0; padding-right: 0; }
+.sidebar .nav-link:hover { background: rgba(255,255,255,0.05); border-radius:4px; padding: .4rem .6rem; }
+.content { min-height: 100vh; }

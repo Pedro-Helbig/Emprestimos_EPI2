@@ -1,15 +1,25 @@
-<h1>Colaboradores</h1>
-<a href="{% url 'colaboradores:criar' %}">Novo Colaborador</a>
-<ul>
+{% extends "base.html" %}
+{% block title %}Colaboradores{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Colaboradores</h1>
+<a href="{% url 'colaboradores:criar' %}" class="btn btn-primary mb-3">Novo Colaborador</a>
+
+<ul class="list-group">
     {% for c in colaboradores %}
-        <li>
-            <a href="{% url 'colaboradores:detalhar' c.pk %}">
-                {{ c.nome }} - {{ c.cargo }}
-            </a>
-            | <a href="{% url 'colaboradores:editar' c.pk %}">Editar</a>
-            | <a href="{% url 'colaboradores:excluir' c.pk %}">Excluir</a>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <a href="{% url 'colaboradores:detalhar' c.pk %}">
+                    <strong>{{ c.nome }}</strong> - {{ c.cargo }}
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'colaboradores:editar' c.pk %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+                <a href="{% url 'colaboradores:excluir' c.pk %}" class="btn btn-sm btn-outline-danger">Excluir</a>
+            </div>
         </li>
     {% empty %}
-        <li>Nenhum colaborador encontrado.</li>
+        <li class="list-group-item">Nenhum colaborador encontrado.</li>
     {% endfor %}
 </ul>
+{% endblock %}
