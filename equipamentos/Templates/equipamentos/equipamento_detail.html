@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ equipamento.nome }}</title>
+</head>
+<body>
+    <h1>{{ equipamento.nome }}</h1>
+    <p><strong>Categoria:</strong> {{ equipamento.categoria.nome }}</p>
+    <p><strong>Descrição:</strong> {{ equipamento.descricao }}</p>
+    <p><strong>Marca:</strong> {{ equipamento.marca }}</p>
+    <p><strong>Modelo:</strong> {{ equipamento.modelo }}</p>
+    <p><strong>Número de Série:</strong> {{ equipamento.numero_serie }}</p>
+    <p><strong>CA:</strong> {{ equipamento.numero_ca }}</p>
+    <p><strong>Data Fabricação:</strong> {{ equipamento.data_fabricacao }}</p>
+    <p><strong>Data Validade:</strong> {{ equipamento.data_validade }}</p>
+    <p><strong>Tamanho:</strong> {{ equipamento.tamanho }}</p>
+    <p><strong>Cor:</strong> {{ equipamento.cor }}</p>
+    <p><strong>Valor Unitário:</strong> R$ {{ equipamento.valor_unitario }}</p>
+    <p><strong>Status:</strong> {{ equipamento.status }}</p>
+    <p><strong>Ativo:</strong> {{ equipamento.ativo|yesno:"Sim,Não" }}</p>
+
+    <a href="{% url 'equipamento_update' equipamento.pk %}">Editar</a> |
+    <a href="{% url 'equipamento_delete' equipamento.pk %}">Excluir</a> |
+    <a href="{% url 'equipamento_list' %}">Voltar</a>
+</body>
+</html>

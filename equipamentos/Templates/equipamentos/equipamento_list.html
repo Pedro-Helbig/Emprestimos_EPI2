@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equipamentos</title>
+</head>
+<body>
+    <h1>Lista de Equipamentos</h1>
+    <a href="{% url 'equipamento_create' %}">+ Novo Equipamento</a>
+    <ul>
+        {% for equipamento in equipamentos %}
+            <li>
+                <a href="{% url 'equipamento_detail' equipamento.pk %}">
+                    {{ equipamento.nome }} ({{ equipamento.numero_serie }})
+                </a>
+                | <a href="{% url 'equipamento_update' equipamento.pk %}">Editar</a>
+                | <a href="{% url 'equipamento_delete' equipamento.pk %}">Excluir</a>
+            </li>
+        {% empty %}
+            <li>Nenhum equipamento cadastrado.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

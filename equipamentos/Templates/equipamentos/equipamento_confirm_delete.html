@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Equipamento</title>
+</head>
+<body>
+    <h1>Tem certeza que deseja excluir "{{ object.nome }}"?</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+        <a href="{% url 'equipamento_list' %}">Cancelar</a>
+    </form>
+</body>
+</html>
+
+X

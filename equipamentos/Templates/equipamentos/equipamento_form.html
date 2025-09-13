@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if object %}Editar{% else %}Novo{% endif %} Equipamento</title>
+</head>
+<body>
+    <h1>{% if object %}Editar{% else %}Novo{% endif %} Equipamento</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'equipamento_list' %}">Cancelar</a>
+</body>
+</html>
