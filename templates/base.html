@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Controle de EPI{% endblock %}</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS local -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  {% block head_extra %}{% endblock %}
+  <style>
+    /* estilos mínimos auxiliares */
+    .app-shell { display:flex; min-height:100vh; }
+    .sidebar { width: 250px; background:#0d6efd; color:#fff; }
+    .sidebar a { color:#fff; text-decoration:none; }
+    .content { flex:1; padding:1.5rem; background:#f8f9fa; }
+    @media (max-width: 768px) { .sidebar { position:fixed; left:-260px; transition:left .2s; z-index:1000 } .sidebar.open { left:0 } }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    {% include "includes/sidebar.html" %}
+
+    <main class="content">
+      {% include "includes/topbar.html" %}
+
+      <!-- Django messages -->
+      <div class="container-fluid mt-3">
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="alert alert-{{ msg.tags }} alert-dismissible fade show" role="alert">
+              {{ msg }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="container-fluid mt-2">
+        {% block content %}
+        <h1>Bem-vindo ao Controle de EPI</h1>
+        <p>Use o menu lateral para navegar.</p>
+        {% endblock %}
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
