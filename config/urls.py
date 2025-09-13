@@ -17,10 +17,12 @@ Including another URLconf
 from xml import dom
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("colaboradores/", include("colaboradores.urls")),
-    path('equipamentos/', include('equipamentos.urls')),  # nome correto do app
+    path('equipamentos/', include('equipamentos.urls')), 
+    path('', RedirectView.as_view(url='/colaboradores/', permanent=False)),
 ]
 

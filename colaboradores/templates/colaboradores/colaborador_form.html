@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<h1>{% if object %}Editar{% else %}Novo{% endif %} Colaborador</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Salvar</button>
-</form>
-<a href="{% url 'colaboradores:listar' %}">Cancelar</a>
-=======
 {% extends "base.html" %}
 {% block title %}{% if object %}Editar{% else %}Novo{% endif %} Colaborador{% endblock %}
 
@@ -21,4 +12,3 @@
     </div>
 </form>
 {% endblock %}
->>>>>>> 0dee799aca11e26bfee71c1c42753bbc24f156ae

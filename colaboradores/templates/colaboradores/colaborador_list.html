@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-<h1>Colaboradores</h1>
-<a href="{% url 'colaboradores:criar' %}">Novo Colaborador</a>
-<ul>
-    {% for c in colaboradores %}
-        <li>
-            <a href="{% url 'colaboradores:detalhar' c.pk %}">
-                {{ c.nome }} - {{ c.cargo }}
-            </a>
-            | <a href="{% url 'colaboradores:editar' c.pk %}">Editar</a>
-            | <a href="{% url 'colaboradores:excluir' c.pk %}">Excluir</a>
-        </li>
-    {% empty %}
-        <li>Nenhum colaborador encontrado.</li>
-    {% endfor %}
-</ul>
-=======
 {% extends "base.html" %}
 {% block title %}Colaboradores{% endblock %}
 
@@ -40,4 +23,3 @@
     {% endfor %}
 </ul>
 {% endblock %}
->>>>>>> 0dee799aca11e26bfee71c1c42753bbc24f156ae

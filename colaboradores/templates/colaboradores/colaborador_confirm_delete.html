@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<h1>Excluir Colaborador</h1>
-<p>Tem certeza que deseja excluir {{ object.nome }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Sim, excluir</button>
-</form>
-<a href="{% url 'colaboradores:listar' %}">Cancelar</a>
-=======
 {% extends "base.html" %}
 {% block title %}Excluir Colaborador{% endblock %}
 
@@ -20,4 +11,3 @@
     <a href="{% url 'colaboradores:listar' %}" class="btn btn-secondary">Cancelar</a>
 </form>
 {% endblock %}
->>>>>>> 0dee799aca11e26bfee71c1c42753bbc24f156ae

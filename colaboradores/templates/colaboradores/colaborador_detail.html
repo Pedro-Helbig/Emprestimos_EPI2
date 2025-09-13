@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<h1>{{ colaborador.nome }}</h1>
-<p><b>CPF:</b> {{ colaborador.cpf }}</p>
-<p><b>Cargo:</b> {{ colaborador.cargo }}</p>
-<p><b>Setor:</b> {{ colaborador.setor }}</p>
-<p><b>Admissão:</b> {{ colaborador.data_admissao }}</p>
-<a href="{% url 'colaboradores:listar' %}">Voltar</a>
-=======
 {% extends "base.html" %}
 {% block title %}Detalhes do Colaborador{% endblock %}
 
@@ -21,4 +13,3 @@
 
 <a href="{% url 'colaboradores:listar' %}" class="btn btn-secondary mt-3">Voltar</a>
 {% endblock %}
->>>>>>> 0dee799aca11e26bfee71c1c42753bbc24f156ae
